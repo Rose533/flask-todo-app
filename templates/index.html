@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>ToDo App</title>
+    </head>
+    <body>
+        <h1>📋 我的待辦清單</h1>
+
+        <form action="/add" method="post">
+            <input type="text" name="task" required>
+            <button type="submit">新增任務</button>
+        </form>
+
+        <ul>
+            {% for task in tasks %}
+                <li>{{ task[1] }} <a href="
+                    /delete/{{ task[0] }}">❌</a></li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>
